@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Shareify</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+    <div id="tsparticles"></div>
+
+  <nav class="nav">
+    <div class="brand">Shareify</div>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/about.html">About</a>
+      <a href="/">Contact Us</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <h1>About this </h1>
+    <p>
+      This is a small demo showing room-based PDF transfer using Socket.IO.
+      The transfer is chunked and relayed through the server.
+    </p>
+   
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+<script>
+  tsParticles.load("tsparticles", {
+    particles: {
+      number: { value: 60 },
+      size: { value: 3 },
+      move: { enable: true, speed: 1 },
+      color: { value: "#3f8cff" },
+      line_linked: {
+        enable: true,
+        distance: 130,
+        color: "#3f8cff",
+        opacity: 0.5
+      }
+    },
+    background: {
+      color: "#0d0d0d"
+    }
+  });
+</script>
+
+</body>
+</html>

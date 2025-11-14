@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Shareify</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+   <div id="tsparticles"></div>
+
+  <nav class="nav">
+    <div class="brand">Shareify</div>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/about.html">About</a>
+      <a href="/">Contact Us</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <h1>Share a PDF — quick demo</h1>
+
+    <section class="card" id="mode-select">
+      <button id="sendBtn" class="primary">Send</button>
+      <button id="recvBtn" class="secondary">Receive</button>
+    </section>
+
+    <section class="card hidden" id="sender-section">
+      <h2>Sender</h2>
+      <div class="row">
+        <label>Room ID :</label>
+        <input id="roomIdSender" readonly />
+        <button id="genRoom" title="Regenerate">⟳</button>
+      </div>
+
+      <div class="drop-area" id="dropArea">
+        <p>Drop File here or <label class="file-label">browse<input id="fileInput" type="file" accept="application/pdf" /></label></p>
+        <p class="muted">Max 25 MB recommended</p>
+      </div>
+
+      <div id="fileInfo" class="muted"></div>
+
+      <div class="row">
+        <button id="startSend" class="primary" disabled>Send to room</button>
+      </div>
+
+      <div id="sendProgress" class="muted"></div>
+    </section>
+
+    <section class="card hidden" id="receiver-section">
+      <h2>Receiver</h2>
+      <div class="row">
+        <label>Enter Room ID:</label>
+        <input id="roomIdReceiver" placeholder="paste sender's room id" />
+        <button id="joinRoom" class="primary">Join</button>
+      </div>
+
+      <div id="recvStatus" class="muted">Not joined</div>
+
+      <div id="incomingFile" class="hidden card small">
+        <h3 id="incomingName"></h3>
+        <div id="recvProgress"></div>
+        <button id="downloadBtn" class="primary" disabled>Download PDF</button>
+      </div>
+    </section>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+<script>
+  tsParticles.load("tsparticles", {
+    particles: {
+      number: { value: 60 },
+      size: { value: 3 },
+      move: { enable: true, speed: 1 },
+      color: { value: "#3f8cff" },
+      line_linked: {
+        enable: true,
+        distance: 130,
+        color: "#3f8cff",
+        opacity: 0.5
+      }
+    },
+    background: {
+      color: "#0d0d0d"
+    }
+  });
+</script>
+
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script type="module" src="/js/client.js"></script>
+</body>
+</html>
